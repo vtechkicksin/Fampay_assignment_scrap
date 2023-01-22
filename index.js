@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const controller = require("./router/getTitle")
 
+const router = express.Router();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -10,8 +11,9 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(controller);
 
+// app.use('/',router);
+app.use(controller);
 
 
 mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true })

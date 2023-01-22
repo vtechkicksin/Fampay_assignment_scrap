@@ -20,6 +20,7 @@ router.get('/getAllData', function(req, res) {
         res.status(200).json(data);
     }
     });
+    
 });
 
 
@@ -35,4 +36,7 @@ router.get('/details', function(req, res) {
             res.status(200).json(data);
         }
     });
+    
 });  
+
+module.exports = router;
