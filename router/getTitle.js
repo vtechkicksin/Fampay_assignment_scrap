@@ -1,3 +1,4 @@
+const dotenv = require("dotenv").config()
 const express = require('express')
 const videoModel = require('../models/videoModel')
 const router = new express.Router();
@@ -25,7 +26,7 @@ router.get('/getAllData', function(req, res) {
 
 
 router.get('/details', function(req, res) {
-    // console.log(req.query)
+    console.log("sandhu",req.body)
     const titleArr = req.query.title ? req.query.title.replace(' ', '|') : ''
     const descArr = req.query.description ? req.query?.description.replace(' ', '|') : ''
     const arr = titleArr + '|' + descArr
@@ -36,7 +37,6 @@ router.get('/details', function(req, res) {
             res.status(200).json(data);
         }
     });
-    
 });  
 
 module.exports = router;
