@@ -11,7 +11,7 @@ async function scrapeYoutubeSearch(searchQuery) {
     await page.waitForSelector('#contents');
     const videos = await page.evaluate(() => {
          
-        const videoElements = Array.from(document.querySelectorAll('#contents > ytd-video-renderer'))
+        const videoElements = Array.from(document.querySelectorAll('#contents > ytd-video-renderer')) 
             .map(content => {
                 return ({
                     title: content.querySelector('#video-title').innerText,

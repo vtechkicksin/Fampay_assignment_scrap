@@ -12,6 +12,7 @@ router.get('/getAllData', function(req, res) {
     const skip = (page - 1) * limit;
     
     videoModel.find({})
+    .sort({"publishedAt":-1})
     .skip(skip)
     .limit(limit)
     .exec(function(err, data) {
